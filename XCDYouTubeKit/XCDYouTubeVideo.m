@@ -195,6 +195,7 @@ static NSDate * ExpirationDate(NSURL *streamURL)
 		NSString *thumbnail = info[@"thumbnail_url"] ?: info[@"iurl"];
 		_thumbnailURL = thumbnail ? [NSURL URLWithString:thumbnail] : nil;
 		
+		_relativeLoudness = [(NSString *)info[@"relative_loudness"] doubleValue];
 		if (!_thumbnailURL) {
 			NSArray <NSDictionary *>*thumnails = XCDThumnailArrayWithString(playerResponse);
 			if (thumnails.count >= 1) {

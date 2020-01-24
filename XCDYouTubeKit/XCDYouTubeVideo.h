@@ -74,6 +74,10 @@ extern NSString *const XCDYouTubeVideoQualityHTTPLiveStreaming;
  */
 @property (nonatomic, readonly) NSTimeInterval duration;
 /**
+ *  The relative loudness of the video.
+ */
+@property (nonatomic, readonly) double relativeLoudness;
+/**
  *  A thumbnail URL for an image of small size, i.e. 120×90. May be nil.
  */
 @property (nonatomic, readonly, nullable) NSURL *thumbnailURL;
