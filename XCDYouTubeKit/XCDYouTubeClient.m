@@ -59,15 +59,8 @@
 		[[NSOperationQueue mainQueue] addOperationWithBlock:^{
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-retain-cycles"
-			if (operation.video || operation.error)
-			{
-				NSAssert(!(operation.video && operation.error), @"One of `video` or `error` must be nil.");
-				completionHandler(operation.video, operation.error);
-			}
-			else
-			{
-				NSAssert(operation.isCancelled, @"Both `video` and `error` can not be nil if the operation was not canceled.");
-			}
+			NSAssert(!(operation.video && operation.error), @"One of `video` or `error` must be nil.");
+			completionHandler(operation.video, operation.error);
 			operation.completionBlock = nil;
 #pragma clang diagnostic pop
 		}];

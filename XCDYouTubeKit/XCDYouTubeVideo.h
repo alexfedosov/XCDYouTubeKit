@@ -93,6 +93,9 @@ extern NSString *const XCDYouTubeVideoQualityHTTPLiveStreaming;
  *  An array of thumbnail URLs for an images of different sizes. Ordered from smaller to bigger.
  */
 @property (nonatomic, readonly, nullable) NSArray<NSURL *> *thumbnailURLs;
+ *  The relative loudness of the video.
+ */
+@property (nonatomic, readonly) double relativeLoudness;
 /**
  *  A thumbnail URL for an image of small size, i.e. 120×90. May be nil.
  */
