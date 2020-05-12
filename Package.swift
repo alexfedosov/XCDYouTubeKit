@@ -9,12 +9,17 @@ let package = Package(
         .macOS(.v10_10)
     ],
     products: [
-        .library(name: "XCDYouTubeKit" , targets: ["XCDYouTubeKit"])
+        .library(name: "XCDYouTubeKit", targets: ["XCDYouTubeKit"])
     ],
     targets: [
         .target(
             name: "XCDYouTubeKit",
             path: ".",
+            exclude: [
+                "XCDYouTubeKit/Info.plist",
+                "XCDYouTubeKit/Configuration.plist",
+                "XCDYouTubeKit/AppledocSettings.plist"
+            ],
             sources: ["XCDYouTubeKit"],
             publicHeadersPath: "XCDYouTubeKit"
         )
